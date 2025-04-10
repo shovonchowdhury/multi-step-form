@@ -33,10 +33,10 @@ export const accountBaseSchema = z.object({
 
 // Account Setup with Password Match Validation (Step 3)
 export const accountSchema = accountBaseSchema.refine(
-  data => data.password === data.confirmPassword,
+  (data) => data.password === data.confirmPassword,
   {
     message: "Passwords don't match",
-    path: ["confirmPassword"]
+    path: ["confirmPassword"], // Error path for password mismatch
   }
 );
 

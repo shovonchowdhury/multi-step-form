@@ -40,10 +40,28 @@ export default function FormPage() {
     const stepSchemas = {
       1: personalSchema,
       2: addressSchema,
-      3: accountBaseSchema,
+      3: accountSchema,
     };
-    const isValid = await trigger(Object.keys(stepSchemas[currentStep].shape));
-    if (isValid) setCurrentStep((s) => (s < 3 ? s + 1 : 3));
+
+    // Trigger validation for the current step
+    let isValid;
+    if (currentStep === 3) {
+      // Validate specific fields for step 3 (account step)
+      isValid = await trigger(["username", "password", "confirmPassword"]);
+    } else {
+      // For other steps, trigger validation as usual
+      isValid = await trigger(Object.keys(stepSchemas[currentStep].shape));
+    }
+
+    // Proceed to the next step if validation passes
+    if (isValid) {
+      if (currentStep === 3) {
+        // Show the summary when on step 3
+        setShowSummary(true);
+      } else {
+        setCurrentStep((s) => (s < 3 ? s + 1 : 3));
+      }
+    }
   };
 
   const handleFormSubmit = async (formData) => {
@@ -139,9 +157,7 @@ export default function FormPage() {
               )}
               <button
                 type="button"
-                onClick={
-                  currentStep === 3 ? () => setShowSummary(true) : handleNext
-                }
+                onClick={handleNext}
                 className="ml-auto cursor-pointer px-4 py-2 rounded bg-blue-500 text-white flex items-center gap-2 hover:bg-blue-600 transition-colors"
               >
                 {currentStep === 3 ? "Review" : "Next"}
