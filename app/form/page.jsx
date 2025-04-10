@@ -73,15 +73,17 @@ export default function FormPage() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div
-        className={`w-full max-w-lg p-6 rounded-xl shadow-lg transition-colors 
+        className={`w-full max-w-lg p-6 rounded-xl  shadow-lg transition-colors 
         ${darkMode ? "bg-gray-800" : "bg-white"}`}
       >
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="mb-6 p-2 cursor-pointer rounded-full bg-gray-200 dark:bg-gray-700"
-        >
-          {darkMode ? <FaLightbulb /> : <MdNightlight />}
-        </button>
+        <div className="flex justify-end">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="mb-6 p-2 cursor-pointer rounded-full bg-gray-200 dark:bg-gray-700"
+          >
+            {darkMode ? <FaLightbulb /> : <MdNightlight />}
+          </button>
+        </div>
 
         {/* Step Indicator */}
         {!showSummary && (
