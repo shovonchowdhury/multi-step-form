@@ -23,56 +23,56 @@ export default function SummaryStep({ data, darkMode }) {
           >
             Personal Details
           </h3>
-          <dl className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            <div className="mb-2 md:mb-0">
-              <dt
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            <div>
+              <p
                 className={`text-xs md:text-sm ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 Full Name
-              </dt>
-              <dd
+              </p>
+              <div
                 className={`text-sm md:text-base ${
                   darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
                 {data.fullName}
-              </dd>
+              </div>
             </div>
-            <div className="mb-2 md:mb-0">
-              <dt
+            <div>
+              <p
                 className={`text-xs md:text-sm ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 Email
-              </dt>
-              <dd
+              </p>
+              <div
                 className={`text-sm md:text-base ${
                   darkMode ? "text-white" : "text-gray-900"
                 } break-all`}
               >
                 {data.email}
-              </dd>
+              </div>
             </div>
             <div>
-              <dt
+              <p
                 className={`text-xs md:text-sm ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 Phone
-              </dt>
-              <dd
+              </p>
+              <div
                 className={`text-sm md:text-base ${
                   darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
                 {data.phone}
-              </dd>
+              </div>
             </div>
-          </dl>
+          </div>
         </div>
 
         {/* Address Information */}
@@ -84,56 +84,56 @@ export default function SummaryStep({ data, darkMode }) {
           >
             Address Details
           </h3>
-          <dl className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            <div className="mb-2 md:mb-0">
-              <dt
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            <div>
+              <p
                 className={`text-xs md:text-sm ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 Street
-              </dt>
-              <dd
+              </p>
+              <div
                 className={`text-sm md:text-base ${
                   darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
                 {data.street}
-              </dd>
+              </div>
             </div>
-            <div className="mb-2 md:mb-0">
-              <dt
+            <div>
+              <p
                 className={`text-xs md:text-sm ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 City
-              </dt>
-              <dd
+              </p>
+              <div
                 className={`text-sm md:text-base ${
                   darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
                 {data.city}
-              </dd>
+              </div>
             </div>
             <div>
-              <dt
+              <p
                 className={`text-xs md:text-sm ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 ZIP Code
-              </dt>
-              <dd
+              </p>
+              <div
                 className={`text-sm md:text-base ${
                   darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
                 {data.zip}
-              </dd>
+              </div>
             </div>
-          </dl>
+          </div>
         </div>
 
         {/* Account Information */}
@@ -145,40 +145,40 @@ export default function SummaryStep({ data, darkMode }) {
           >
             Account Details
           </h3>
-          <dl className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            <div className="mb-2 md:mb-0">
-              <dt
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            <div>
+              <p
                 className={`text-xs md:text-sm ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 Username
-              </dt>
-              <dd
+              </p>
+              <div
                 className={`text-sm md:text-base ${
                   darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
                 {data.username}
-              </dd>
+              </div>
             </div>
             <div>
-              <dt
+              <p
                 className={`text-xs md:text-sm ${
                   darkMode ? "text-gray-400" : "text-gray-600"
                 }`}
               >
                 Password
-              </dt>
-              <dd
+              </p>
+              <div
                 className={`text-sm md:text-base ${
                   darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
                 ••••••••
-              </dd>
+              </div>
             </div>
-          </dl>
+          </div>
         </div>
       </div>
 
