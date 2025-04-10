@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Multi-Step Form with Validation
 
-## Getting Started
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-green?style=for-the-badge&logo=vercel)](https://multi-step-form-blue-zeta.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.0-blueviolet?logo=tailwind-css)](https://tailwindcss.com/)
 
-First, run the development server:
+A modern multi-step form implementation with robust validation, dark mode support, and API simulation. Built using Next.js App Router and modern web technologies.
+
+![Form Screenshot](https://via.placeholder.com/800x400.png?text=Form+Screenshot+Here)  
+_Replace with actual screenshots of your form steps and dark mode_
+
+## Live Demo
+
+Experience the form live:  
+🔗 [https://multi-step-form-blue-zeta.vercel.app/](https://multi-step-form-blue-zeta.vercel.app/)
+
+## Features
+
+- **Three-Step Form Wizard**
+  - Personal Information → Address Details → Account Setup
+  - Progress indicator with step tracking
+  - Next/Previous navigation
+- **Smart Validation**
+  - Zod schema validation for each step
+  - Real-time error messages
+  - Password confirmation matching
+- **Modern UI**
+  - Dark/Light mode toggle
+  - Responsive design
+  - Interactive feedback states
+  - Animated transitions
+- **API Integration**
+  - Mock submission endpoint
+  - Loading states with spinners
+  - Error handling with retry
+- **Summary Review**
+  - Data confirmation before submission
+  - JSON data preview
+  - Submission status tracking
+
+## Technologies Used
+
+- **Core Framework**: Next.js 14 (App Router)
+- **UI Library**: React 18
+- **Form Handling**: React Hook Form + Zod
+- **Styling**: Tailwind CSS + CSS Modules
+- **State Management**: React Query
+- **Icons**: React Icons
+- **HTTP Client**: Axios
+- **Deployment**: Vercel
+
+## Installation
+
+To run the project locally, follow these steps:
+
+1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/multi-step-form.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate into the project directory:
+   ```bash
+   cd multi-step-form
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the development server:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+   ```bash
+   npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Open your browser and go to `http://localhost:3000`.
