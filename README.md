@@ -7,8 +7,6 @@
 
 A modern multi-step form implementation with robust validation, dark mode support, and API simulation. Built using Next.js App Router and modern web technologies.
 
-![Form Screenshot](https://via.placeholder.com/800x400.png?text=Form+Screenshot+Here)  
-_Replace with actual screenshots of your form steps and dark mode_
 
 ## Live Demo
 
