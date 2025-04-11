@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
@@ -22,8 +22,8 @@ import { toast } from "react-toastify";
 
 export default function FormPage() {
   const [currentStep, setCurrentStep] = useState(1);
-  const dark = JSON.parse(localStorage.getItem("darkMode"));
-  const [darkMode, setDarkMode] = useState(dark || false);
+  // const dark = JSON.parse(localStorage.getItem("darkMode"));
+  const [darkMode, setDarkMode] = useState(false);
 
   const [showSummary, setShowSummary] = useState(false);
 
@@ -37,6 +37,20 @@ export default function FormPage() {
     resolver: zodResolver(combinedSchema),
     mode: "onSubmit",
   });
+
+  useEffect(() => {
+    // Check if window is available (client side)
+    if (typeof window !== "undefined") {
+      const savedDarkMode = JSON.parse(localStorage.getItem("darkMode"));
+      setDarkMode(savedDarkMode || false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    }
+  }, [darkMode]);
 
   const handleNext = async () => {
     const stepSchemas = {
@@ -100,7 +114,6 @@ export default function FormPage() {
           <button
             onClick={() => {
               setDarkMode(!darkMode);
-              localStorage.setItem("darkMode", JSON.stringify(!darkMode));
             }}
             className="mb-6 p-2 cursor-pointer rounded-full bg-gray-200 dark:bg-gray-700"
           >
