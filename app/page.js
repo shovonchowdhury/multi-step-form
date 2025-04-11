@@ -6,7 +6,7 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-8 dark:text-white">
-          Welcome to Multi-Step Form Demo
+          Multi-Step Form Demo
         </h1>
         <Link 
           href="/form"

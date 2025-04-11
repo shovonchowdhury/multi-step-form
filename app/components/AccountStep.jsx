@@ -15,10 +15,10 @@ export default function AccountStep({ register, errors, darkMode }) {
         </label>
         <input
           {...register("username")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="Enter Username"
         />
@@ -34,10 +34,10 @@ export default function AccountStep({ register, errors, darkMode }) {
         <input
           type="password"
           {...register("password")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="Enter password"
         />
@@ -53,10 +53,10 @@ export default function AccountStep({ register, errors, darkMode }) {
         <input
           type="password"
           {...register("confirmPassword")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="Confirm password"
         />

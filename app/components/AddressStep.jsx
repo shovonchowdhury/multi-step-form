@@ -17,10 +17,10 @@ export default function AddressStep({ register, errors, darkMode }) {
         </label>
         <input
           {...register("street")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="Your street address"
         />
@@ -37,10 +37,10 @@ export default function AddressStep({ register, errors, darkMode }) {
         </label>
         <input
           {...register("city")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="Your city"
         />
@@ -57,10 +57,10 @@ export default function AddressStep({ register, errors, darkMode }) {
         </label>
         <input
           {...register("zip")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="ZIP"
         />

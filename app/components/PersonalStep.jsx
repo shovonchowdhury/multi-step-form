@@ -15,10 +15,10 @@ export default function PersonalStep({ register, errors, darkMode }) {
         </label>
         <input
           {...register("fullName")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="Enter your full name"
         />
@@ -34,10 +34,10 @@ export default function PersonalStep({ register, errors, darkMode }) {
         <input
           type="email"
           {...register("email")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="Enter a valid Email"
         />
@@ -53,10 +53,10 @@ export default function PersonalStep({ register, errors, darkMode }) {
         <input
           type="tel"
           {...register("phone")}
-          className={`w-full p-2 rounded border ${
+          className={`w-full p-2 rounded border outline-none ${
             darkMode
               ? "bg-gray-700 border-gray-600 text-white"
-              : "bg-white border-gray-300"
+              : "bg-gray-100 border-gray-300"
           }`}
           placeholder="Enter your phone number"
         />

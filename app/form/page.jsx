@@ -22,7 +22,9 @@ import { toast } from "react-toastify";
 
 export default function FormPage() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [darkMode, setDarkMode] = useState(false);
+  const dark = JSON.parse(localStorage.getItem("darkMode"));
+  const [darkMode, setDarkMode] = useState(dark || false);
+
   const [showSummary, setShowSummary] = useState(false);
 
   const {
@@ -96,7 +98,10 @@ export default function FormPage() {
       >
         <div className="flex justify-end">
           <button
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={() => {
+              setDarkMode(!darkMode);
+              localStorage.setItem("darkMode", JSON.stringify(!darkMode));
+            }}
             className="mb-6 p-2 cursor-pointer rounded-full bg-gray-200 dark:bg-gray-700"
           >
             {darkMode ? <FaLightbulb /> : <MdNightlight />}
@@ -147,8 +152,10 @@ export default function FormPage() {
                 <button
                   type="button"
                   onClick={() => setCurrentStep((s) => s - 1)}
-                  className={`px-4 py-2 rounded flex cursor-pointer items-center gap-2 ${
-                    darkMode ? "bg-gray-700 text-white" : "bg-gray-200"
+                  className={`pl-1 pr-3 py-2 rounded-lg flex cursor-pointer items-center gap-1  ${
+                    darkMode
+                      ? "bg-gray-700 text-white"
+                      : "bg-gray-200 hover:bg-gray-300"
                   }`}
                 >
                   <FiChevronLeft className="h-5 w-5" />
@@ -158,7 +165,7 @@ export default function FormPage() {
               <button
                 type="button"
                 onClick={handleNext}
-                className="ml-auto cursor-pointer px-4 py-2 rounded bg-blue-500 text-white flex items-center gap-2 hover:bg-blue-600 transition-colors"
+                className="ml-auto cursor-pointer pl-3 pr-1 py-2 rounded-lg bg-blue-500 text-white flex items-center gap-1 hover:bg-blue-600 transition-colors"
               >
                 {currentStep === 3 ? "Review" : "Next"}
                 <FiChevronRight className="h-5 w-5" />
@@ -169,8 +176,10 @@ export default function FormPage() {
               <button
                 type="button"
                 onClick={() => setShowSummary(false)}
-                className={`px-4 py-2 cursor-pointer rounded flex items-center gap-2 ${
-                  darkMode ? "bg-gray-700 text-white" : "bg-gray-200"
+                className={`pl-1 pr-3 py-2 rounded-lg flex cursor-pointer items-center gap-1  ${
+                  darkMode
+                    ? "bg-gray-700 text-white"
+                    : "bg-gray-200 hover:bg-gray-300"
                 }`}
               >
                 <FiChevronLeft className="h-5 w-5" />
@@ -180,8 +189,8 @@ export default function FormPage() {
                 type="button"
                 onClick={handleSubmit((data) => mutate(data))}
                 disabled={isPending}
-                className={`ml-auto cursor-pointer px-4 py-2 rounded flex items-center gap-2 
-                  bg-green-500 hover:bg-green-600
+                className={`ml-auto cursor-pointer pl-2 pr-3 py-2 rounded-lg flex items-center gap-1 
+                  bg-green-600 hover:bg-green-700
                  text-white transition-colors`}
               >
                 {isPending ? (
@@ -191,8 +200,8 @@ export default function FormPage() {
                   </>
                 ) : (
                   <>
-                    Submit
                     <FiCheck className="h-5 w-5" />
+                    Submit
                   </>
                 )}
               </button>
